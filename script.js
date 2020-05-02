@@ -1,21 +1,17 @@
-let arr = [1,2,3,4,5,6,7,8,9,10]
-arr.forEach(  (item, id) => {
-    console.log(item)
-})
-console.log("-----------------")
+const ff = (x) => {
+    return x * x
+}
 
-arr.forEach( (item, id) => {
-    if (id==4) {
-        console.log(item)
-    }
-})
-console.log("-----------------")
+console.log(ff(2))
+console.log("-----------69-----------")
+const chet = (x) => {
+    if (x % 2 == 0) {
+        console.log("Число чётное")
+    } else console.log("Число нечётное")
+}
 
-arr.forEach( (item, id) => {
-    if (item%2) {
-        console.log(item)
-    }
-})
-console.log("-----------------")
+chet(2)
+console.log("-----------or-----------")
+chet(5)
 
-
+console.log("-----------69-----------")
