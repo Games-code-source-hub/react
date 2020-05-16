@@ -1,60 +1,50 @@
-class Animal {
-    constructor(type = "", scale = "", color = "") {
-        this.scale = scale;
-        this.color = color;
-        this.type = type;
+class School {
+    constructor(number = 0, city = "") {
+        this.city = city;
+        this.number = number;
 
     }
 
-    info() {
-        console.log(this.type + " is " + this.color + " and " + this.scale + ".");
-    }
-}
-
-class Dog extends Animal {
-    constructor(type, scale, color, kind = "") {
-        super(type, scale, color, kind)
-        this.kind = kind;
-    }
-
-    getDog() {
-        console.log("It's " + this.kind);
+    getInfo() {
+        console.log("School number " + this.number + " in " + this.city + ".");
     }
 }
 
-const Ginger = new Dog("dog", "huge", "black", "labrador")
-
-Ginger.info()
-Ginger.getDog()
-
-class Duck extends Animal {
-    constructor(type, scale, color, wingspan = 0) {
-        super(type, scale, color, wingspan)
-        this.wingspan = wingspan;
+class Employee extends School {
+    constructor(name = "", job="", number, city) {
+        super(number, city)
+        this.name = name;
+        this.job = job;
     }
 
-    getDuck() {
-        console.log("Duck's wingspan is " + this.wingspan + " cm");
+    getEmp() {
+        console.log("It's " + this.name + ". He is a(an) " + this.job);
     }
 }
 
-const Donald = new Duck("duck", "moderate", "white", 81)
-
-Donald.info()
-Donald.getDuck()
-
-class Chipmunk extends Animal {
-    constructor(type, scale, color, food = "") {
-        super(type, scale, color, food)
-        this.food = food;
+class Group extends School {
+    constructor(group = "", spec = "", number, city) {
+        super(number, city)
+        this.group = group;
+        this.spec = spec; //Тут имеется в виду на чём специализируется группа 
     }
 
-    getChipmunk() {
-        console.log("Chipmunk eats " + this.food);
+    getGroup() {
+        console.log(this.group + " is a group specializing on a(an)" + this.spec);
     }
 }
 
-const Chip = new Chipmunk("chimpunk", "small", "brown", "nuts")
+class Student extends Group {
+    constructor(name="", mark=0, group, spec) {
+        super(group, spec)
+        this.name = name;
+        this.mark = mark;
+    }
 
-Chip.info()
-Chip.getChipmunk()
+    getStudent() {
+        console.log("Student's name is " + this.name + ". He has " + this.mark + " in fourth quarter."); //quater же четверть?
+    }
+}
+
+const Grisha = new Student (name="Grisha",mark=2)
+Grisha.getStudent();
